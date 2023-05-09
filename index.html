@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es-Mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero automatico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Cajero ATM</h1>
+    </header>
+    <main>
+        <div class="row justify-content-center">
+            <div class="container text-center col-9 | contenedor">
+                <div class="row">
+                    <section id="seccionIzquierda" class="col col-2">
+                        <div class="d-grid gap-2 mx-auto">
+                            <button class="btn btn-primary" type="button" id="depositar">DEPOSITAR</button>
+                            <button class="btn btn-primary" type="button" id="consultar">CONSULTAR</button>
+                        </div>
+                    </section>
+                    <section id="seccionCentral" class="col ">
+                        <div class="card mb-3">
+                            <div class="card-body  text-center">
+                                <h5 class="card-title">BANCOT</h5>
+                                <p class="card-text text-center">Bienvenido.</p>
+                                <p class="card-text text-center">Ingrese su número de cuenta.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="seccionDerecha" class="col col-2">
+                        <div class="d-grid gap-2 mx-auto">
+                            <button class="btn btn-primary" type="button" id="retirar">RETIRAR</button>
+                            <button class="btn btn-primary" type="button" id="terminar">TERMINAR</button>
+                        </div>
+                    </section>
+                </div>
+                <div class="row">
+                    <section id="seccionIzquierda" class="col col-2">
+                    </section>
+                    <section id="seccionCentral" class="col">
+                        <div class="d-grid mx-auto">
+                            <button class="btn btn-primary" type="button" id="tomarEfectivo">TOMAR EFECTIVO</button>
+                        </div>
+                    </section>
+                    <section id="seccionDerecha" class="col col-2">
+                        <div class="d-grid mx-auto">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop" id="numeroCuenta">ACCEDER A MI CUENTA</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cuentabientes</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="cuentaUsuario" placeholder="12145" max="9999">
+                            <label for="floatingInput">Número de cuenta</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="nipUsuario" placeholder="Password" max="9999">
+                            <label for="floatingPassword">NIP de la cuenta</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cerrarModalSesion">Regresar</button>
+                        <button type="button" class="btn btn-primary" id="ingresarCuenta">Ingresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Version 1.0</p>
+        <p>DEV.F Kata JS</p>
+    </footer>
+</body>
+
+</html>

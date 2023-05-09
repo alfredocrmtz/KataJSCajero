@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+footer{
+    color: black;
+    text-align: right;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 1em;    
+}
+
+footer p{
+    margin-right: 1vw;    
+}
+
+.contenedor{
+    background-color: rgba(13, 135, 216, 0.753);
+    margin: 2em 2em 2em 2em;
+    padding: 1em 1em 1em 1em;
+    font-size: larger;
+    opacity: 0.5;
+    border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    box-shadow: 0.3em 0.3em 0.8em 0.8em rgb(79, 56, 182);
+    -webkit-box-shadow:  0.3em 0.3em 0.8em 0.8em rgb(79, 56, 182);
+    color: white;
+}
