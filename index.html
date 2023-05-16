@@ -25,23 +25,40 @@
                 <div class="row">
                     <section id="seccionIzquierda" class="col col-2">
                         <div class="d-grid gap-2 mx-auto">
-                            <button class="btn btn-primary" type="button" id="depositar">DEPOSITAR</button>
-                            <button class="btn btn-primary" type="button" id="consultar">CONSULTAR</button>
+                            <button class="btn btn-primary | acciones" type="button" id="depositar" hidden>DEPOSITAR</button>
+                            <button class="btn btn-primary | acciones" type="button" id="consultar" hidden>CONSULTAR</button>
                         </div>
                     </section>
-                    <section id="seccionCentral" class="col ">
+                    <section id="seccionCentral" class="col">
                         <div class="card mb-3">
-                            <div class="card-body  text-center">
+                            <div class="card-body text-center | pantalla">
                                 <h5 class="card-title">BANCOT</h5>
-                                <p class="card-text text-center">Bienvenido.</p>
-                                <p class="card-text text-center">Ingrese su número de cuenta.</p>
+                                <p class="card-text text-center" id="bienvenida">Bienvenido.</p>
+                                <p class="card-text text-center" id="mensajeSecundario">Ingrese su número de cuenta.</p>
+                                <div id="mensages" class="alert alert-primary position-absolute bottom-50  start-50 translate-middle-x d-none" role="alert">
+                                    A simple primary alert—check it out!
+                                </div>
+                                <div id="mensajeRetiro" class="alert alert-primary position-absolute bottom-0  start-50 translate-middle-x" role="alert" hidden>
+                                    <div class="form-floating mb-3 bottom-0  start-50 translate-middle-x">
+                                        <input type="number" class="form-control" id="retiroEfectivo" placeholder="12145" max="999">
+                                        <label for="floatingInput">Cantidad a retirar</label>                                        
+                                    </div>
+                                    <button class="btn btn-primary" type="button" id="confirmaRetiro" >Continuar</button>
+                                </div>
+                                <div id="mensajeDeposito" class="alert alert-primary position-absolute bottom-0  start-50 translate-middle-x" role="alert" hidden>
+                                    <div class="form-floating mb-3 bottom-0  start-50 translate-middle-x">
+                                        <input type="number" class="form-control" id="depositoEfectivo" placeholder="12145" max="999">
+                                        <label for="floatingInput">Cantidad a depositar</label>                                        
+                                    </div>
+                                    <button class="btn btn-primary" type="button" id="confirmaDeposito">Continuar</button>
+                                </div>
                             </div>
                         </div>
                     </section>
                     <section id="seccionDerecha" class="col col-2">
                         <div class="d-grid gap-2 mx-auto">
-                            <button class="btn btn-primary" type="button" id="retirar">RETIRAR</button>
-                            <button class="btn btn-primary" type="button" id="terminar">TERMINAR</button>
+                            <button class="btn btn-primary | acciones" type="button" id="retirar" hidden>RETIRAR</button>
+                            <button class="btn btn-primary | acciones" type="button" id="terminar" hidden>TERMINAR</button>
                         </div>
                     </section>
                 </div>
@@ -50,13 +67,13 @@
                     </section>
                     <section id="seccionCentral" class="col">
                         <div class="d-grid mx-auto">
-                            <button class="btn btn-primary" type="button" id="tomarEfectivo">TOMAR EFECTIVO</button>
+                            <button class="btn btn-primary" type="button" id="tomarEfectivo" hidden>TOMAR EFECTIVO</button>
                         </div>
                     </section>
                     <section id="seccionDerecha" class="col col-2">
                         <div class="d-grid mx-auto">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop" id="numeroCuenta">ACCEDER A MI CUENTA</button>
+                                data-bs-target="#staticBackdrop" id="numeroCuenta" show>ACCEDER A MI CUENTA</button>
                         </div>
                     </section>
                 </div>

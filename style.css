@@ -4,33 +4,61 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: url("body.png");
+    background-color: white;
+}
+
 h1{
     text-align: center;
 }
 
+header, footer{
+    background-image: url("header_js.png");
+    background-color: blue;
+    color: white;
+    padding: 1em;
+}
+
 footer{
-    color: black;
     text-align: right;
     display: block;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    margin-bottom: 1em;    
+    width: 100%;    
 }
 
 footer p{
     margin-right: 1vw;    
 }
 
+button{
+    text-decoration: solid;
+    font-weight: bold;
+}
+
 .contenedor{
+    height: 50vh;
     background-color: rgba(13, 135, 216, 0.753);
-    margin: 2em 2em 2em 2em;
-    padding: 1em 1em 1em 1em;
+    margin: 2em;
+    padding: 1em;
     font-size: larger;
-    opacity: 0.5;
+    opacity: 0.6;
     border-radius: 0.8em;
     -webkit-border-radius: 0.8em;
     box-shadow: 0.3em 0.3em 0.8em 0.8em rgb(79, 56, 182);
     -webkit-box-shadow:  0.3em 0.3em 0.8em 0.8em rgb(79, 56, 182);
-    color: white;
+    color: white;    
+}
+
+.pantalla{
+    height: 40vh;
+}
+
+.alert{
+    width: 80%;
+}
+
+.acciones{
+    height: 15vh;
 }
