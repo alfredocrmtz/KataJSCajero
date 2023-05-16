@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+body, .modal-content{
     background-image: url("body.png");
     background-color: white;
 }
@@ -13,7 +13,7 @@ h1{
     text-align: center;
 }
 
-header, footer{
+header, footer, .modal-header, .modal-footer{
     background-image: url("header_js.png");
     background-color: blue;
     color: white;

@@ -31,6 +31,12 @@ let cuentabientes = [
     { cuenta: 2917, nombre: "Maui", saldo: 67, password: 9628, intentosAcceso: 0, bloqueada: false },
 ];
 
+function mostrarSaldo() {
+    mensagesAlerta("¡Su saldo disponible es de $" + informacionCuentabiente.saldo + "!", "success");
+    msgBienvenida.innerText = "¡Hola " + informacionCuentabiente.nombre + "!";
+    msgSecundario.innerText = "";
+}
+
 function movimiento(cantidad) {
     for (let i = 0; i < cuentabientes.length; i++) {
         if (cuentabientes[i].cuenta === strNumeroDeCuenta) {
@@ -42,13 +48,13 @@ function movimiento(cantidad) {
 }
 
 function validarDeposito(cantidad) {
-    mensagesAlerta("¡Deposito de efectivo!", "info");
+    mensagesAlerta("¡Depósito de efectivo!", "info");
     if (cantidad <= 0) {
         mensagesAlerta("!Solo puede depositar cantidades mayores a CERO!", "warning");
         inputDepositoEfectivo.value = "";
         return false;
     } else if ((informacionCuentabiente.saldo + cantidad) > MONTO_MAXIMO) {
-        mensagesAlerta("!Su saldo final excederia la cantidad maxima permitida, intente con una cantidad menor!", "warning");
+        mensagesAlerta("!Su saldo final excedería la cantidad máxima permitida, intente con una cantidad menor!", "warning");
         inputDepositoEfectivo.value = "";
         return false;
     } else {
@@ -59,15 +65,15 @@ function validarDeposito(cantidad) {
 function validarRetiro(cantidad) {
     mensagesAlerta("¡Retiro de efectivo!", "info");
     if (cantidad > informacionCuentabiente.saldo) {
-        mensagesAlerta("!Saldo insuficiete, intente con una cantidad menor!", "warning");
+        mensagesAlerta("¡Saldo insuficiente, intente con una cantidad menor!", "warning");
         inputRetiroEfectivo.value = "";
         return false;
     } else if (cantidad <= 0) {
-        mensagesAlerta("!Solo puede retirar cantidades mayores a CERO!", "warning");
+        mensagesAlerta("¡Solo puede retirar cantidades mayores a CERO!", "warning");
         inputRetiroEfectivo.value = "";
         return false;
     } else if ((informacionCuentabiente.saldo - cantidad) <= MONTO_MINIMO) {
-        mensagesAlerta("!Saldo insuficiete, su cuenta no debe tener menos de $" + MONTO_MINIMO + "!", "warning");
+        mensagesAlerta("¡Saldo insuficiente, su cuenta no debe tener menos de $" + MONTO_MINIMO + "!", "warning");
         inputRetiroEfectivo.value = "";
         return false;
     } else {
@@ -102,7 +108,7 @@ function validaDatos(numberCenta, nip) {
 
 function habilitarOperaciones(estatus) {
     if (estatus) {
-        mensagesAlerta("¡Seleccione la operación que desa realizar en los controles laterales!", "success");
+        mensagesAlerta("¡Seleccione la operación que desea realizar en los controles laterales!", "success");
         msgBienvenida.innerText = "¡Hola " + informacionCuentabiente.nombre + "!";
         msgSecundario.innerText = "";
 
@@ -146,12 +152,6 @@ function habilitarOperaciones(estatus) {
 
 }
 
-function mostrarSaldo() {
-    mensagesAlerta("¡Su saldo disponible es de $" + informacionCuentabiente.saldo + "!", "success");
-    msgBienvenida.innerText = "¡Hola " + informacionCuentabiente.nombre + "!";
-    msgSecundario.innerText = "";
-}
-
 btnIniciarSesion.addEventListener('click', function () {
     let numeroDeCuenta = document.querySelector("#cuentaUsuario");
     let nipUsuario = document.querySelector("#nipUsuario");
@@ -161,7 +161,7 @@ btnIniciarSesion.addEventListener('click', function () {
                 habilitarOperaciones(true);
                 break;
             case 2:
-                mensagesAlerta("¡Su cuenta ha sido bloqueada intente en las proximas 48 horas!", "danger");
+                mensagesAlerta("¡Su cuenta ha sido bloqueada intente en las próximas 48 horas!", "danger");
                 msgBienvenida.innerText = "";
                 msgSecundario.innerText = "";
                 break;
@@ -171,7 +171,7 @@ btnIniciarSesion.addEventListener('click', function () {
                 msgSecundario.innerText = "";
                 break;
             case 4:
-                mensagesAlerta("¡Ustede no es cuentabiente!", "danger");
+                mensagesAlerta("¡Usted no es cuentahabiente!", "danger");
                 msgBienvenida.innerText = "";
                 msgSecundario.innerText = "";
                 break;
@@ -201,7 +201,7 @@ btnRetirar.addEventListener('click', function () {
 
 btnDepositar.addEventListener('click', function () {
     habilitarOperaciones(true);
-    mensagesAlerta("¡Deposito de efectivo!", "info");
+    mensagesAlerta("¡Depósito de efectivo!", "info");
     msgDeposito.removeAttribute("hidden");
 });
 
@@ -229,7 +229,7 @@ btnConfirmarDeposito.addEventListener('click', function () {
     let deposito = Number(inputDepositoEfectivo.value);
     if (validarDeposito(deposito)) {
         habilitarOperaciones(true);
-        mensagesAlerta(`¡Su saldo era de $${informacionCuentabiente.saldo}!\nUsted deposito $${deposito}\nSu saldo actual es de $${movimiento(deposito)}`, "success");
+        mensagesAlerta(`¡Su saldo era de $${informacionCuentabiente.saldo}!\nUsted depósito $${deposito}\nSu saldo actual es de $${movimiento(deposito)}`, "success");
         inputDepositoEfectivo.value = "";
     }
 });
